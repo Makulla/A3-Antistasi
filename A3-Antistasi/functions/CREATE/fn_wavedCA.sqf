@@ -57,7 +57,7 @@ forcedSpawn pushBack _mrkDestination; publicVariable "forcedSpawn";
 diag_log format ["%1: [Antistasi] | INFO | Side Attacker:%2, Side Defender: %3",servertime,_sideX,_isSDK];
 _nameDest = [_mrkDestination] call A3A_fnc_localizar;
 
-[_sideTsk,"rebelAttack",[format ["%2 Is attacking from the %1. Intercept them or we may loose a sector",_nameOrigin,_nameENY],format ["%1 Attack",_nameENY],_mrkOrigin],getMarkerPos _mrkOrigin,false,0,true,"Defend",true] call BIS_fnc_taskCreate;
+[_sideTsk,"rebelAttack",[format ["%2 Is attacking from the %1. Intercept them or we may loose a sector. Intel reports they will attack %3.",_nameOrigin,_nameENY,_nameDest],format ["%1 Attack",_nameENY],_mrkOrigin],getMarkerPos _mrkOrigin,false,0,true,"Defend",true] call BIS_fnc_taskCreate;
 [_sideTsk1,"rebelAttackPVP",[format ["We are attacking %2 from the %1. Help the operation if you can",_nameOrigin,_nameDest],format ["%1 Attack",_nameENY],_mrkDestination],getMarkerPos _mrkDestination,false,0,true,"Attack",true] call BIS_fnc_taskCreate;
 //_tsk = ["rebelAttack",_sideTsk,[format ["%2 Is attacking from the %1. Intercept them or we may loose a sector",_nameOrigin,_nameENY],format ["%1 Attack",_nameENY],_mrkOrigin],getMarkerPos _mrkOrigin,"CREATED",10,true,true,"Defend"] call BIS_fnc_setTask;
 //missionsX pushbackUnique "rebelAttack"; publicVariable "missionsX";
