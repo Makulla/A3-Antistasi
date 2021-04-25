@@ -81,6 +81,7 @@ _timer = if ([_cured] call A3A_fnc_fatalWound) then
                 };
             };
 
+_timer = _timer * 0.2;
 
 _medicX setVariable ["timeToHeal",_timer];
 _medicX playMoveNow selectRandom medicAnims;
