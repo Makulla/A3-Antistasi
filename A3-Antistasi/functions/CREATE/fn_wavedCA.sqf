@@ -708,15 +708,15 @@ while {(_waves > 0)} do
                         private _supportChange = [0, 0];
                         if(_distance < 2000) then
                         {
-                            _supportChange = [10, -10];
+                            _supportChange = [1, -1];
                         };
                         if(_distance < 1000) then
                         {
-                            _supportChange = [20, -20];
+                            _supportChange = [2, -2];
                         };
                         if(_distance < 500) then
                         {
-                            _supportChange = [30, -30];
+                            _supportChange = [5, -5];
                         };
                         if(_distance < 2000) then
                         {
