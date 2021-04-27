@@ -706,32 +706,6 @@ while {(_waves > 0)} do
 			["rebelAttackPVP",[format ["We are attacking an %2 from the %1. Help the operation if you can",_nameOrigin,_nameDest],format ["%1 Attack",_nameENY],_mrkDestination],getMarkerPos _mrkDestination,"SUCEEDED"] call A3A_fnc_taskUpdate;
 			if (_mrkDestination in citiesX) then
 			{
-                //Impact the support on other cities in the area
-                //They cant defend us, switch back to NATO
-                {
-                    if(_x != _mrkDestination) then
-                    {
-                        private _distance = (getMarkerPos _mrkDestination) distance2D (getMarkerPos _x);
-                        private _supportChange = [0, 0];
-                        if(_distance < 2000) then
-                        {
-                            _supportChange = [1, -1];
-                        };
-                        if(_distance < 1000) then
-                        {
-                            _supportChange = [2, -2];
-                        };
-                        if(_distance < 500) then
-                        {
-                            _supportChange = [5, -5];
-                        };
-                        if(_distance < 2000) then
-                        {
-                            _supportChange pushBack _x;
-                            _supportChange remoteExec ["A3A_fnc_citySupportChange",2];
-                        };
-                    };
-                } forEach citiesX;
 				[60,-60,_mrkDestination,false] remoteExec ["A3A_fnc_citySupportChange",2];		// no pop scaling, force swing
 				["TaskFailed", ["", format ["%1 joined %2",[_mrkDestination, false] call A3A_fnc_location,nameOccupants]]] remoteExec ["BIS_fnc_showNotification",teamPlayer];
 				sidesX setVariable [_mrkDestination,Occupants,true];
