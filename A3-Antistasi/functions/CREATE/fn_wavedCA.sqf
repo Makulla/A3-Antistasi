@@ -63,6 +63,8 @@ _nameDest = [_mrkDestination] call A3A_fnc_localizar;
 //missionsX pushbackUnique "rebelAttack"; publicVariable "missionsX";
 //_tsk1 = ["rebelAttackPVP",_sideTsk1,[format ["We are attacking %2 from the %1. Help the operation if you can",_nameOrigin,_nameDest],format ["%1 Attack",_nameENY],_mrkDestination],getMarkerPos _mrkDestination,"CREATED",10,true,true,"Attack"] call BIS_fnc_setTask;
 
+sleep 180; // give the players 3 minutes to rally
+
 // Use fixed aggro value for non-rebel targets for the moment
 private _aggro = if (_sideX == Occupants) then {aggressionOccupants} else {aggressionInvaders};
 if !(_isSDK) then {_aggro = 100 - _aggro;};
