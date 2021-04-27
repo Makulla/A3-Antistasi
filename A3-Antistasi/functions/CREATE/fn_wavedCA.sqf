@@ -682,7 +682,7 @@ while {(_waves > 0)} do
 		if !([true] call A3A_fnc_FIAradio) then {sleep 100};
 		_SDKShown = true;
 		["TaskSucceeded", ["", "Attack Destination Updated"]] remoteExec ["BIS_fnc_showNotification",teamPlayer];
-		["rebelAttack",[format ["%2 Is attacking from the %1. Intercept them or we may loose a sector",_nameOrigin,_nameENY],format ["%1 Attack",_nameENY],_mrkDestination],getMarkerPos _mrkDestination,"CREATED"] call A3A_fnc_taskUpdate;
+		["rebelAttack",[format ["%2 Is attacking from the %1. Intercept them or we may loose a sector. We are expecting %3 waves.",_nameOrigin,_nameENY,_waves],format ["%1 Attack",_nameENY],_mrkDestination],getMarkerPos _mrkDestination,"CREATED"] call A3A_fnc_taskUpdate;
 		};
 	_solMax = round ((count _soldiers)*0.6);
 	_waves = _waves -1;
