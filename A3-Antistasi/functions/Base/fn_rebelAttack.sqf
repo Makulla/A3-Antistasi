@@ -417,6 +417,8 @@ else
 		+ (count allPlayers / 20)
 		+ (tierWar / 5);
 
+    _waves = _waves * 0.75;
+
 	_waves = round _waves;
     if(_waves < 1) then {_waves = 1};
 
