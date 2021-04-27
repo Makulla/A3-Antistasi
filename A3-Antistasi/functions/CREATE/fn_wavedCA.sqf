@@ -635,6 +635,8 @@ while {(_waves > 0)} do
 
 	[2, format ["Spawn performed: %1 air vehicles inc. %2 supports, %3 land vehicles, %4 soldiers", _nVehAir, _countNewSupport, _nVehLand, count _soldiers], _filename] call A3A_fnc_log;
 
+	[petros,"sideChat", format["Wave of hostiles inbound to %1. %2 air vehicles (including %3 support) and %4 land vehicles.", _nameDest, _nVehAir, _countNewSupport, _nVehLand]] remoteExec ["A3A_fnc_commsMP",[teamPlayer,civilian]];
+
 	_plane = if (_sideX == Occupants) then {vehNATOPlane} else {vehCSATPlane};
 	if (_sideX == Occupants) then
 		{
