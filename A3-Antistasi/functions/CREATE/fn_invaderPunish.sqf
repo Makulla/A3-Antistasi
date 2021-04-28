@@ -12,6 +12,8 @@ _pilots = [];
 _vehiclesX = [];
 _civilians = [];
 
+sleep 180; // give the players a moment to rally
+
 diag_log format ["[Antistasi] Launching CSAT Punish Against %1 from %2 (CSATpunish.sqf)", _attackDestination, _attackOrigin];
 
 _nameDestination = [_attackDestination] call A3A_fnc_localizar;
