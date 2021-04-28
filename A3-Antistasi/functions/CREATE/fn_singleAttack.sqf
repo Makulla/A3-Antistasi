@@ -133,6 +133,10 @@ for "_i" from 1 to _vehicleCount do
 };
 [2, format ["Spawn Performed: Small %1 attack sent with %2 vehicles", _typeOfAttack, count _vehicles], _filename] call A3A_fnc_log;
 
+private _destinationName = [_markerDestination] call A3A_fnc_localizar;
+private _originName = [_markerOrigin] call A3A_fnc_localizar;
+[petros,"sideChat", format ["%3 hostile vehicles detected attacking %2 from %1. Out.", _originName, _destinationName, count _vehicles]] remoteExec ["A3A_fnc_commsMP",[teamPlayer,civilian]];
+
 //Prepare despawn conditions
 private _endTime = time + 2700;
 private _qrfHasArrived = false;
